@@ -1,0 +1,10 @@
+--- a/libxt_SPOOFTCP.c
++++ b/libxt_SPOOFTCP.c
+@@ -350,6 +350,7 @@ static struct xtables_target spooftcp_tg
+ 	.x6_options	= SPOOFTCP_opts,
+ };
+ 
++#define _init __attribute__((constructor)) _INIT
+ void _init(void)
+ {
+ 	xtables_register_target(&spooftcp_tg_reg);
